@@ -21,7 +21,7 @@ func _physics_process(_delta):
 	if player != null && navigation != null:
 		if state == 1: 
 			criar_caminho()
-		if state == 2:
+		if state == 2 || state == 3:
 			path.clear()
 			velocidade = 0
 	if Input.is_key_pressed(KEY_P): #Apenas para testar a efeito de Hit do inimigo
