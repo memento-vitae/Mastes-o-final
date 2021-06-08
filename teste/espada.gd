@@ -3,9 +3,10 @@ extends Node2D
 #variaveis
 var girar=false
 var batendo = false
-
+var poder
 #função de girar a espada
 func _startatk(var atk, var move:Vector2,var espada):
+	poder=true
 	if(move.x<0):
 		$".".z_index=0
 		$".".position=Vector2(6,7)
@@ -48,3 +49,9 @@ func animacaoparado(var espada):
 #identificar se a animação já terminou
 func bateu():
 	batendo=false
+
+func hit1():
+	poder=!poder
+
+func colisao():
+	return poder;

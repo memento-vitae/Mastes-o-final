@@ -8,7 +8,8 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "eixox+"
-step = 0.2
+length = 0.75
+step = 0.15
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -16,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.75 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -30,7 +31,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
@@ -100,7 +101,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "eixox-"
-step = 0.2
+length = 0.75
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("eixos/eixoy+:visible")
 tracks/0/interp = 1
@@ -132,7 +134,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
@@ -144,7 +146,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.75 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -192,7 +194,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "eixoy+"
-step = 0.2
+length = 0.75
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("eixos/eixox:visible")
 tracks/0/interp = 1
@@ -236,7 +239,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
@@ -248,7 +251,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.75 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -284,7 +287,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "eixoy-"
-step = 0.2
+length = 0.75
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("eixos/eixoy-:visible")
 tracks/0/interp = 1
@@ -328,7 +332,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
@@ -340,7 +344,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.75 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -602,9 +606,12 @@ __meta__ = {
 position = Vector2( 0.00159033, -2 )
 
 [node name="eixox" type="Sprite" parent="eixos"]
+visible = false
 texture = ExtResource( 1 )
+flip_h = true
 vframes = 2
 hframes = 3
+frame = 5
 
 [node name="eixoy+" type="Sprite" parent="eixos"]
 visible = false
@@ -612,12 +619,13 @@ z_index = -2
 texture = ExtResource( 4 )
 vframes = 2
 hframes = 3
+frame = 5
 
 [node name="eixoy-" type="Sprite" parent="eixos"]
-visible = false
 texture = ExtResource( 3 )
 vframes = 2
 hframes = 3
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/eixox+ = SubResource( 1 )

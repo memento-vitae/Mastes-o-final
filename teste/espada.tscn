@@ -7,9 +7,9 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "atk1"
-length = 0.6
+length = 0.61
 loop = true
-step = 0.12
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
@@ -96,11 +96,27 @@ tracks/6/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.59 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit1"
+}, {
+"args": [  ],
+"method": "hit1"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "atk2"
 length = 1.08
-step = 0.12
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
@@ -163,10 +179,34 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit1"
+}, {
+"args": [  ],
+"method": "hit1"
+}, {
+"args": [  ],
+"method": "hit1"
+}, {
+"args": [  ],
+"method": "hit1"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
-length = 0.6
+length = 0.63
 loop = true
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -243,6 +283,23 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "hit1"
+}, {
+"args": [  ],
+"method": "hit1"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -360,7 +417,7 @@ visible = false
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 3
-frame = 5
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/atk1 = SubResource( 1 )
@@ -378,11 +435,12 @@ visible = false
 texture = ExtResource( 3 )
 
 [node name="Sprite3" type="Sprite" parent="."]
+visible = false
 position = Vector2( -7, -7 )
 texture = ExtResource( 4 )
 vframes = 3
 hframes = 3
-frame = 5
+frame = 8
 __meta__ = {
 "_editor_description_": "ta certo? 3x3?"
 }

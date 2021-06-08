@@ -34,6 +34,7 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	body.dano(dano)
 	hamburguer=Vector2()
+	queue_free()
 	
 #sumir
 func _on_Timer_timeout():

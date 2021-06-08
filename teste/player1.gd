@@ -6,12 +6,12 @@ export var dano: int
 export var velocidade = 300
 export var stamina = 100
 export var fase = ""
+export var vida:int
 
 #variaveis usadas para ações secundarias
 var coin = 0
 var direct= Vector2()
 var move = Vector2()
-export var vida:int
 
 #variaveis de movimento
 var controll = {
@@ -45,6 +45,7 @@ func controll_loop():
 #essa serve pare o personagem se mover
 func mooviment_loop(delta):
 	walk()
+	$Area2D/CollisionShape2D.set_deferred("disabled",$espadinha.colisao());
 	atacar()#acho que dá para por na processo fisico
 	var movimento = (move*velocidade)
 	if(self.controll['dash']==true && stamina>0):
@@ -64,6 +65,7 @@ func walk():
 func atacar():
 	var flip
 	if(!self.controll['flecha']):
+		$Area2D.set_deferred("disabled",true)
 		animation()
 		$"talvez seja um arco".visible=false
 		$espadinha.visible=true
@@ -80,20 +82,20 @@ func animation():
 	if(move.x<0):
 		$AnimatedSprite.play("andar(H)")
 		$AnimatedSprite.flip_h=true
-		$Area2D/CollisionShape2D.position=Vector2(-7,5)
+		$Area2D/CollisionShape2D.position=Vector2(-9,4)
 		direct=Vector2(-1,0)
 	elif(move.x>0):
 		$AnimatedSprite.play("andar(H)")
 		$AnimatedSprite.flip_h=false
-		$Area2D/CollisionShape2D.position=Vector2(6,5)
+		$Area2D/CollisionShape2D.position=Vector2(8,4)
 		direct=Vector2(1,0)
 	elif(move.y>0):
 		$AnimatedSprite.play("andar(B)")
-		$Area2D/CollisionShape2D.position=Vector2(0,9)
+		$Area2D/CollisionShape2D.position=Vector2(0,10)
 		direct=Vector2(0,1)
 	elif(move.y<0):
 		$AnimatedSprite.play("andar(C)")
-		$Area2D/CollisionShape2D.position=Vector2(0,1)
+		$Area2D/CollisionShape2D.position=Vector2(0,-2)
 		direct=Vector2(0,-1)
 	elif(move==Vector2(0,0)):
 		if(direct.x!=0):
@@ -149,5 +151,4 @@ func coinadd(var moedas:int):
 
 #dar dano nos inimigos
 func _on_Area2D_body_entered(body):
-	if(self.controll['atk']):
-		body.dano(dano)
+	body.dano(dano)
