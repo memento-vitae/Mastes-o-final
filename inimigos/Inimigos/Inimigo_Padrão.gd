@@ -109,6 +109,7 @@ func _on_Area_Ataque_body_entered(body):
 
 #função levar da dano
 func dano(var dano):
+	print("ai")
 	$Hit.play("Hit")
 	live-=dano
 	if(live<1):

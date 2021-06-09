@@ -32,7 +32,7 @@ func look_at_mouse(var aparece):
 
 #ver se  clicou em atirar
 func _input(event):
-	if Input.is_action_pressed("atirar"):
+	if (Input.is_action_pressed("atirar") && $".".visible):
 		atirar=true
 	else:
 		atirar=false
