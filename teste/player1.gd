@@ -23,9 +23,22 @@ var controll = {
 	'atk': false,
 	'flecha':false,
 }
-
+#variaveis para save
+var array=[]#salvar dados
+var file = File.new()
+var localsave="saveMygame.save"
 #é aqui em que o codigo começa
 func _physics_process(delta):
+	array=[espada,dano,coin, $".".global_position ]
+	file.open(localsave, File.WRITE)
+	file.store_var(array)
+	file.close()
+	if file.file_exists(localsave):
+		file.open(localsave, File.READ)
+		print(file.get_var())
+		file.close()
+	else:
+		print("Erro")
 	controll_loop()
 	mooviment_loop(delta)
 	$"talvez seja um arco".look_at_mouse(self.controll['flecha'])
