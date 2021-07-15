@@ -5,8 +5,9 @@ export var espada: int
 export var dano: int
 export var velocidade = 300
 export var stamina = 100
-export var fase = ""
+var fase 
 export var vida:int
+export var vidamax:int
 
 #variaveis usadas para ações secundarias
 var coin = 0
@@ -26,19 +27,21 @@ var controll = {
 #variaveis para save
 var array=[]#salvar dados
 var file = File.new()
-var localsave="saveMygame.save"
+var localsave="saves/saveMygame.save"
 #é aqui em que o codigo começa
+func _ready():
+	fase=get_parent()
 func _physics_process(delta):
-	array=[espada,dano,coin, $".".global_position ]
-	file.open(localsave, File.WRITE)
-	file.store_var(array)
-	file.close()
+	
 	if file.file_exists(localsave):
 		file.open(localsave, File.READ)
 		print(file.get_var())
 		file.close()
 	else:
-		print("Erro")
+		array=[espada,dano,coin, $".".global_position,vidamax]
+		file.open(localsave, File.WRITE)
+		file.store_var(array)
+		file.close()
 	controll_loop()
 	mooviment_loop(delta)
 	$"talvez seja um arco".look_at_mouse(self.controll['flecha'])
@@ -95,19 +98,23 @@ func animation():
 	if(move.x<0):
 		$AnimatedSprite.play("andar(H)")
 		$AnimatedSprite.flip_h=true
-		$Area2D/CollisionShape2D.position=Vector2(-9,4)
+		$Area2D/CollisionShape2D.rotation_degrees=0
+		$Area2D/CollisionShape2D.position=Vector2(-9,3)
 		direct=Vector2(-1,0)
 	elif(move.x>0):
 		$AnimatedSprite.play("andar(H)")
 		$AnimatedSprite.flip_h=false
-		$Area2D/CollisionShape2D.position=Vector2(8,4)
+		$Area2D/CollisionShape2D.rotation_degrees=0
+		$Area2D/CollisionShape2D.position=Vector2(9,3)
 		direct=Vector2(1,0)
 	elif(move.y>0):
 		$AnimatedSprite.play("andar(B)")
+		$Area2D/CollisionShape2D.rotation_degrees=-90
 		$Area2D/CollisionShape2D.position=Vector2(0,10)
 		direct=Vector2(0,1)
 	elif(move.y<0):
 		$AnimatedSprite.play("andar(C)")
+		$Area2D/CollisionShape2D.rotation_degrees=-90
 		$Area2D/CollisionShape2D.position=Vector2(0,-2)
 		direct=Vector2(0,-1)
 	elif(move==Vector2(0,0)):

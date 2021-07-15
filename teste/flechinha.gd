@@ -4,7 +4,7 @@ extends KinematicBody2D
 var  hamburguer=Vector2()
 var Mcs
 var caiu=false
-var dano=5
+var dano=2.5
 
 #função que inicia a flecha
 func _ready():
