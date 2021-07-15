@@ -27,7 +27,7 @@ var controll = {
 #variaveis para save
 var array=[]#salvar dados
 var file = File.new()
-var localsave="saves/saveMygame.save"
+var localsave="save/saveMygame.save"
 #é aqui em que o codigo começa
 func _ready():
 	fase=get_parent()
