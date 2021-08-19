@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://menu/MENU.gd" type="Script" id=1]
+[ext_resource path="res://fonts/MENU.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MENU" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.219971
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 153.0 ],
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.317
+anchor_top = 0.033
+anchor_right = 0.405
+anchor_bottom = 0.054
+margin_left = -51.32
+margin_top = 76.048
+margin_right = 74.2
+margin_bottom = 177.624
+rect_scale = Vector2( 2, 2 )
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Memento Vitae
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -120.0
+margin_top = 200.0
+margin_right = 64.0
+margin_bottom = 251.0
+custom_fonts/font = ExtResource( 2 )
+text = "Iniciar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="and" type="Button" parent="."]
+margin_left = 358.0
+margin_top = 384.0
+margin_right = 550.0
+margin_bottom = 432.0
+custom_fonts/font = ExtResource( 2 )
+text = "Sair"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opções" type="Button" parent="."]
+margin_left = 362.0
+margin_top = 296.0
+margin_right = 546.0
+margin_bottom = 344.0
+custom_fonts/font = ExtResource( 2 )
+text = "\"opções\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="and" to="." method="_on_and_pressed"]

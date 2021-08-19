@@ -30,12 +30,7 @@ func _physics_process(delta):
 		hamburguer -= Mcs * delta#reduzir a velocidade
 		caiu=false
 
-#dar dano
-func _on_Area2D_body_entered(body):
-	body.dano(dano)
-	hamburguer=Vector2()
-	queue_free()
-	
+
 #sumir
 func _on_Timer_timeout():
 	queue_free()
@@ -43,3 +38,9 @@ func _on_Timer_timeout():
 #verifica se bateu em uma parede
 func _on_parede_body_entered(body):
 	hamburguer=Vector2()
+
+
+func _on_Area2D_area_entered(area):
+	area.get_parent().dano(dano)
+	hamburguer=Vector2()
+	queue_free()

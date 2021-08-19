@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 	if file.file_exists(localsave):
 		file.open(localsave, File.READ)
-		print(file.get_var())
+		#print(file.get_var())
 		file.close()
 	else:
 		array=[espada,dano,coin, $".".global_position,vidamax]
@@ -170,5 +170,6 @@ func coinadd(var moedas:int):
 	coin+=moedas
 
 #dar dano nos inimigos
-func _on_Area2D_body_entered(body):
-	body.dano(dano)
+func _on_Area2D_area_entered(area):
+	print("pdh")
+	area.get_parent().dano(dano)

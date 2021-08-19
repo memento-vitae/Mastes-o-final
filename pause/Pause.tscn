@@ -31,5 +31,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 480, 272 )
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 168.0
+margin_bottom = 84.0
+text = "\"OPÇÕES\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+margin_left = 88.0
+margin_top = 112.0
+margin_right = 168.0
+margin_bottom = 132.0
+text = "SAIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]

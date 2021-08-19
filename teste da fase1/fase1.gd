@@ -7,7 +7,7 @@ func _ready():
 	file.store_string(nomefase)
 	file.close()
 
-
+#CONFIA
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
