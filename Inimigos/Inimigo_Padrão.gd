@@ -35,7 +35,8 @@ func _ready():
 		state = 1
 	if player == null || navigation == null: #Player ou navigation não existem
 		breakpoint 
-	if state == 2: find_path()
+	if state == 2: 
+		find_path()
 
 func _physics_process(delta):
 	if movimento_liberado == true:
@@ -59,6 +60,7 @@ func melhorar_movimento():
 		
 func movimento(var delta):
 	var p:Vector2
+	
 	if state == 1: 
 		criar_caminho(player.global_position)
 	elif state == 2:
@@ -67,15 +69,12 @@ func movimento(var delta):
 			p = path[1] - path[0]
 			if (p.x < 1 && p.x > -1) && (p.y < 1 && p.y > -1):
 				state = 3
-	
-	
 	if state == 1 || state == 2:
 		move *= vel_atual
 		move = move_and_slide(move)
 		direcao(move, 5)
 	elif state == 3:
 		nav_path(delta)
-	
 	if state == 3 || state == 2:
 		campo_de_visao(true)
 	else: 
@@ -92,6 +91,7 @@ func criar_caminho(var objetivo:Vector2):
 	if path.size() > 0:
 		dif = global_position - path[path.size()-1]
 		move = global_position.direction_to(path[1])
+		
 		if dif.x < 1 && dif.x > -1 && dif.y < 1 && dif.y > -1:
 			move = Vector2(0,0)
 	else:

@@ -44,9 +44,7 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5.74295, 7.15443 )
 
-[node name="Inimigo_Padrão" type="KinematicBody2D" groups=[
-"Inimigo",
-]]
+[node name="Inimigo_Padrão" type="KinematicBody2D" groups=["Inimigo"]]
 collision_layer = 32
 collision_mask = 2147483689
 script = ExtResource( 2 )
@@ -100,4 +98,5 @@ collision_mask = 21
 [node name="Coll" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -0.530928, 0.959923 )
 shape = SubResource( 4 )
+
 [connection signal="body_exited" from="Area" to="." method="_on_Area_Ataque_body_exited"]

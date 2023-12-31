@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jorges_big_sword_for_slowers.png-d404f5a097cd53308cf20c8ca77bdc65.stex"
+path="res://.import/dungeonTiles2.png-a425081997a6efa47879219d89d0ca48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/espada/Jorges_big_sword_for_slowers.png"
-dest_files=[ "res://.import/Jorges_big_sword_for_slowers.png-d404f5a097cd53308cf20c8ca77bdc65.stex" ]
+source_file="res://dungeonTiles2.png"
+dest_files=[ "res://.import/dungeonTiles2.png-a425081997a6efa47879219d89d0ca48.stex" ]
 
 [params]
 
