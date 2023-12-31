@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Inimigos/Inimigo_Padrão.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.15679, 3.20028 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 125.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "hit_effect"
+}, {
+"args": [ false ],
+"method": "hit_effect"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Andar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.74295, 7.15443 )
+
+[node name="Inimigo_Padrão" type="KinematicBody2D" groups=["Inimigo"]]
+collision_layer = 32
+collision_mask = 2147483689
+script = ExtResource( 2 )
+
+[node name="Andar" type="AnimatedSprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0554937, 3.285 )
+shape = SubResource( 1 )
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Coll" type="CollisionShape2D" parent="Area"]
+shape = SubResource( 2 )
+
+[node name="Hit" type="AnimationPlayer" parent="."]
+anims/Hit = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Campo_de_visao" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Coll" type="CollisionPolygon2D" parent="Campo_de_visao"]
+position = Vector2( 2.48086, -1.28061 )
+polygon = PoolVector2Array( 0, 0, 25, -45, 85, -65, 85, 65, 25, 45, 0, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Visao" type="RayCast2D" parent="Campo_de_visao"]
+rotation = -0.645772
+enabled = true
+cast_to = Vector2( 107, 0 )
+collision_mask = 2147483657
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="Campo_de_visao"]
+wait_time = 0.25
+one_shot = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 21
+
+[node name="Coll" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -0.530928, 0.959923 )
+shape = SubResource( 4 )
+
+[connection signal="body_exited" from="Area" to="." method="_on_Area_Ataque_body_exited"]
