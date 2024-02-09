@@ -1,0 +1,330 @@
+[gd_scene load_steps=25 format=3 uid="uid://cnncft6ut28xk"]
+
+[ext_resource type="PackedScene" uid="uid://20us8gplogt3" path="res://Cenas/Inimigos/Inimigo_Padrão.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/Inimigo_do_Orgulho.gd" id="2"]
+[ext_resource type="AnimationLibrary" uid="uid://c6ssvg2dkj7ka" path="res://Interações.res" id="3_jsti0"]
+[ext_resource type="Texture2D" uid="uid://bi80esy0i1wnj" path="res://Sprites/Inimigos/iuri.png" id="3_w7ca7"]
+[ext_resource type="PackedScene" uid="uid://bmdyp5oe6cvog" path="res://Cenas/Inimigos/Funcoes/SeguirCaminho.tscn" id="6_0m7xm"]
+[ext_resource type="PackedScene" uid="uid://daj2pahr8mrlc" path="res://Cenas/Inimigos/Funcoes/PerseguirJogador.tscn" id="6_ng636"]
+[ext_resource type="PackedScene" uid="uid://bvnlber0hpt3o" path="res://Cenas/Inimigos/Funcoes/CampoDeVisao.tscn" id="7_1sast"]
+[ext_resource type="PackedScene" uid="uid://oxa6rw1of8o4" path="res://Cenas/Inimigos/Funcoes/Atacar.tscn" id="8_re6dm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyerh"]
+size = Vector2(9, 15.5)
+
+[sub_resource type="Animation" id="Animation_wpx4e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmjvp"]
+_data = {
+"RESET": SubResource("Animation_wpx4e")
+}
+
+[sub_resource type="Animation" id="Animation_tmdip"]
+resource_name = "Baixo"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_a4ayp"]
+resource_name = "Cima"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(24, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0, 26, -0.25, 0, 0.25, 0, 27, -0.25, 0, 0.25, 0, 28, -0.25, 0, 0.25, 0, 29, -0.25, 0, 0.25, 0, 30, -0.25, 0, 0.25, 0, 31, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 33, -0.25, 0, 0.25, 0, 34, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_njem4"]
+resource_name = "Direita"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(12, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 14, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0, 21, -0.25, 0, 0.25, 0, 22, -0.25, 0, 0.25, 0, 23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_ur5eu"]
+resource_name = "Esquerda"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(36, -0.25, 0, 0.25, 0, 37, -0.25, 0, 0.25, 0, 38, -0.25, 0, 0.25, 0, 39, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 41, -0.25, 0, 0.25, 0, 42, -0.25, 0, 0.25, 0, 43, -0.25, 0, 0.25, 0, 44, -0.25, 0, 0.25, 0, 45, -0.25, 0, 0.25, 0, 46, -0.25, 0, 0.25, 0, 47, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tfj6p"]
+_data = {
+"Baixo": SubResource("Animation_tmdip"),
+"Cima": SubResource("Animation_a4ayp"),
+"Direita": SubResource("Animation_njem4"),
+"Esquerda": SubResource("Animation_ur5eu")
+}
+
+[sub_resource type="Animation" id="Animation_jkrua"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0, 49, -0.25, 0, 0.25, 0, 50, -0.25, 0, 0.25, 0, 51, -0.25, 0, 0.25, 0, 52, -0.25, 0, 0.25, 0, 53, -0.25, 0, 0.25, 0, 54, -0.25, 0, 0.25, 0, 55, -0.25, 0, 0.25, 0, 56, -0.25, 0, 0.25, 0, 57, -0.25, 0, 0.25, 0, 58, -0.25, 0, 0.25, 0, 59, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_eggfp"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(72, -0.25, 0, 0.25, 0, 73, -0.25, 0, 0.25, 0, 74, -0.25, 0, 0.25, 0, 75, -0.25, 0, 0.25, 0, 76, -0.25, 0, 0.25, 0, 77, -0.25, 0, 0.25, 0, 78, -0.25, 0, 0.25, 0, 79, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 81, -0.25, 0, 0.25, 0, 82, -0.25, 0, 0.25, 0, 83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_scci0"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(60, -0.25, 0, 0.25, 0, 61, -0.25, 0, 0.25, 0, 62, -0.25, 0, 0.25, 0, 63, -0.25, 0, 0.25, 0, 64, -0.25, 0, 0.25, 0, 65, -0.25, 0, 0.25, 0, 66, -0.25, 0, 0.25, 0, 67, -0.25, 0, 0.25, 0, 68, -0.25, 0, 0.25, 0, 69, -0.25, 0, 0.25, 0, 70, -0.25, 0, 0.25, 0, 71, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_806l8"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(84, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 86, -0.25, 0, 0.25, 0, 87, -0.25, 0, 0.25, 0, 88, -0.25, 0, 0.25, 0, 89, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0, 91, -0.25, 0, 0.25, 0, 92, -0.25, 0, 0.25, 0, 93, -0.25, 0, 0.25, 0, 94, -0.25, 0, 0.25, 0, 95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60hk4"]
+_data = {
+"Baixo": SubResource("Animation_jkrua"),
+"Cima": SubResource("Animation_eggfp"),
+"Direita": SubResource("Animation_scci0"),
+"Esquerda": SubResource("Animation_806l8")
+}
+
+[sub_resource type="Animation" id="98"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/Coll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.530928, 0.959923)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/Coll:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.74295, 7.15443)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.50184, 1.98375)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.347333, 4.61244)]
+}
+
+[sub_resource type="Animation" id="99"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/Coll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.720488, 5.38158)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/Coll:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.91093, 8.90641)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.30717, 2.7887)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.422245, 9.51213)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6gms"]
+_data = {
+"1": SubResource("98"),
+"2": SubResource("99")
+}
+
+[node name="Inimigo_do_Orgulho" instance=ExtResource("1")]
+y_sort_enabled = true
+wall_min_slide_angle = 0.226893
+script = ExtResource("2")
+vel_maxima = 25
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_w7ca7")
+hframes = 6
+vframes = 16
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(0.5, 0)
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Hitbox" parent="." index="2"]
+visible = false
+
+[node name="Coll" parent="Hitbox" index="0"]
+position = Vector2(0.5, -1.25)
+shape = SubResource("RectangleShape2D_gyerh")
+debug_color = Color(0.545098, 0.564706, 0.184314, 0.278431)
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_jmjvp"),
+"Forma_1": SubResource("AnimationLibrary_tfj6p"),
+"Forma_2": SubResource("AnimationLibrary_60hk4"),
+"Interacoes": ExtResource("3_jsti0"),
+"Mudanca_De_Forma": SubResource("AnimationLibrary_d6gms")
+}
+
+[node name="NavigationAgent2D" parent="." index="4"]
+debug_enabled = false
+
+[node name="PerseguirJogador" parent="." index="6" instance=ExtResource("6_ng636")]
+
+[node name="SeguirCaminho" parent="." index="7" instance=ExtResource("6_0m7xm")]
+
+[node name="CampoDeVisao" parent="." index="8" instance=ExtResource("7_1sast")]
+visible = false
+
+[node name="Ataque" parent="." index="9" instance=ExtResource("8_re6dm")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="saiu_da_area" from="PerseguirJogador" to="." method="_on_perseguir_jogador_saiu_da_area"]
+[connection signal="permaneceu_na_area" from="CampoDeVisao" to="." method="_on_area_de_visao_permaneceu_na_area"]

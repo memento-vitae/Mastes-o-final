@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://daj2pahr8mrlc"]
+
+[ext_resource type="Script" path="res://Cenas/Inimigos/Funcoes/PerseguirJogador.gd" id="1_gii6h"]
+
+[node name="PerseguirJogador" type="Node"]
+script = ExtResource("1_gii6h")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://20us8gplogt3"]
+
+[ext_resource type="Script" path="res://Scripts/Inimigo_Padrao.gd" id="2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iapp3"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(9, 15.5)
+
+[sub_resource type="Animation" id="Animation_j8k7w"]
+
+[sub_resource type="Animation" id="Animation_fb0om"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3cyo"]
+_data = {
+"Ataque": SubResource("Animation_j8k7w"),
+"SofrerDano": SubResource("Animation_fb0om")
+}
+
+[sub_resource type="Animation" id="Animation_1pfr2"]
+resource_name = "Baixo"
+
+[sub_resource type="Animation" id="Animation_6ppg5"]
+resource_name = "Cima"
+
+[sub_resource type="Animation" id="Animation_4e062"]
+resource_name = "Direita"
+
+[sub_resource type="Animation" id="Animation_u0rxb"]
+resource_name = "Esquerda"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnlen"]
+_data = {
+"Baixo": SubResource("Animation_1pfr2"),
+"Cima": SubResource("Animation_6ppg5"),
+"Direita": SubResource("Animation_4e062"),
+"Esquerda": SubResource("Animation_u0rxb")
+}
+
+[node name="Inimigo_Padrao" type="CharacterBody2D" groups=["Inimigo"]]
+collision_layer = 32
+collision_mask = 2147483689
+motion_mode = 1
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iapp3")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 21
+
+[node name="Coll" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"Interações": SubResource("AnimationLibrary_y3cyo"),
+"Movimento": SubResource("AnimationLibrary_fnlen")
+}
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

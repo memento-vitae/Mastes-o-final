@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvnlber0hpt3o"]
+
+[ext_resource type="Script" path="res://Scripts/CampoDeVisao.gd" id="1_us16u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5blbe"]
+radius = 17.0294
+
+[node name="CampoDeVisao" type="Area2D"]
+z_index = -1
+collision_layer = 0
+script = ExtResource("1_us16u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5blbe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+modulate = Color(1, 0.364706, 0.337255, 0.560784)
+position = Vector2(2.48086, -1.28061)
+polygon = PackedVector2Array(0, 0, 25, -45, 84.5191, -65, 85, 65, 25, 45, 0, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -0.645772
+target_position = Vector2(108, 0)
+collision_mask = 2147483657
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

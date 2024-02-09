@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmdyp5oe6cvog"]
+
+[ext_resource type="Script" path="res://Cenas/Inimigos/Funcoes/SeguirCaminho.gd" id="1_p254c"]
+
+[node name="SeguirCaminho" type="Node2D"]
+z_index = -1
+script = ExtResource("1_p254c")
+
+[node name="Marker2D" type="Marker2D" parent="."]

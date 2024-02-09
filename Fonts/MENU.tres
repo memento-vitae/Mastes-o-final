@@ -1,0 +1,8 @@
+[gd_resource type="FontFile" load_steps=2 format=3]
+
+[ext_resource type="FontFile" uid="uid://ccpubreiwxm5" path="res://Fonts/DUBAI-BOLD.TTF" id="1"]
+
+[resource]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
