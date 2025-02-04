@@ -1,8 +1,0 @@
-res://Fases/Fase1.tscn
-res://Scripts/Pause.gd
-res://Menus/Pause/Pause.tscn
-res://Cenas/tutorial.tscn
-res://Cenas/Jogador/Jogador.tscn
-res://Cenas/armas/arco.tscn
-res://Scripts/flecha.gd
-res://Cenas/armas/flecha.tscn

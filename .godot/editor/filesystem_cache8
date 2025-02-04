@@ -1,70 +1,68 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707489589
-Icone do Jogo.png::CompressedTexture2D::5547878843128416953::1707250064::1707250106::1::::<><>::
-Interações.res::AnimationLibrary::6986985084279961948::1706353046::0::1::::<><>::
-MV - Elemento Cenário.png::CompressedTexture2D::7289432231268446141::1704893406::1705833999::1::::<><>::
-::res://addons/::1707488902
-::res://Cenas/::1707489218
-tutorial.tscn::PackedScene::4131365596992426555::1707489218::0::1::::<><>::uid://bgnti48ri00u5::::res://Sprites/GUI/Sprite-0002.png
-::res://Cenas/armas/::1707423575
-arco.tscn::PackedScene::6534385672883789808::1707423575::0::1::::<><>::res://Scripts/arco.gd<>uid://ca5ashu5qjipl::::res://Sprites/Armas/arco e flecha/Arco Completo.png
-flecha.tscn::PackedScene::5955607886943848060::1706920247::0::1::::<><>::uid://nuxlvj3cftae::::res://Sprites/Armas/arco e flecha/flecha.png<>res://Scripts/flecha.gd
-::res://Cenas/Inimigos/::1707354203
-Inimigo_Padrão.tscn::PackedScene::1947956449460156346::1707354203::0::1::::<><>::res://Scripts/Inimigo_Padrao.gd
-::res://Cenas/Inimigos/Funcoes/::1707423575
-Atacar.tscn::PackedScene::1030180786969794501::1707423575::0::1::::<><>::res://Scripts/Atacar.gd
-CampoDeVisao.tscn::PackedScene::3887893221109822298::1707317101::0::1::::<><>::res://Scripts/CampoDeVisao.gd
-PerseguirJogador.gd::GDScript::-1::1707265198::0::1::::<>Node<>::
-PerseguirJogador.tscn::PackedScene::7179507608209733004::1707265466::0::1::::<><>::res://Cenas/Inimigos/Funcoes/PerseguirJogador.gd
-SeguirCaminho.gd::GDScript::-1::1707250988::0::1::::<>Node2D<>::
-SeguirCaminho.tscn::PackedScene::3236365532897675190::1707251748::0::1::::<><>::res://Cenas/Inimigos/Funcoes/SeguirCaminho.gd
-::res://Cenas/Inimigos/Orgulho/::1707423575
-Inimigo_do_Orgulho.tscn::PackedScene::5712264655206246244::1707423575::0::1::::<><>::uid://20us8gplogt3::::res://Cenas/Inimigos/Inimigo_Padrão.tscn<>res://Scripts/Inimigo_do_Orgulho.gd<>uid://c6ssvg2dkj7ka::::res://Interações.res<>uid://bi80esy0i1wnj::::res://Sprites/Inimigos/iuri.png<>uid://bmdyp5oe6cvog::::res://Cenas/Inimigos/Funcoes/SeguirCaminho.tscn<>uid://daj2pahr8mrlc::::res://Cenas/Inimigos/Funcoes/PerseguirJogador.tscn<>uid://bvnlber0hpt3o::::res://Cenas/Inimigos/Funcoes/CampoDeVisao.tscn<>uid://oxa6rw1of8o4::::res://Cenas/Inimigos/Funcoes/Atacar.tscn
-::res://Cenas/Jogador/::1707489218
-espada.tscn::PackedScene::5122445942305257792::1707251747::0::1::::<><>::res://Scripts/espada.gd<>uid://cv6dp6uo7x3rx::::res://Sprites/Armas/espada/Jorges_big_sword_for_slowers.png<>uid://bxff7vv02unj4::::res://Sprites/Armas/espada/Untitled_03-15-2021_11-02-44.png
-Jogador.tscn::PackedScene::6692547563831181809::1707489218::0::1::::<><>::res://Scripts/jogador.gd<>uid://b38avexov22uu::::res://Sprites/player/Jorge.png<>uid://ce8l63lgydnoy::::res://Cenas/Jogador/espada.tscn<>uid://c0dkm3hh8ms2c::::res://Cenas/armas/arco.tscn<>uid://cwvp3svm7lo1x::::res://Menus/Pause/Pause.tscn
-::res://Fases/::1707489218
-Fase1.tscn::PackedScene::2700182330714069367::1707489218::0::1::::<><>::uid://qyt0baskklh4::::res://TileSet/masmorra/dungeonTiles2.png<>uid://c2l6jsma8moy0::::res://Cenas/Jogador/Jogador.tscn<>uid://cnncft6ut28xk::::res://Cenas/Inimigos/Orgulho/Inimigo_do_Orgulho.tscn<>uid://by4i8t42gbxkd::::res://Cenas/tutorial.tscn
-::res://Fonts/::1705521692
-DUBAI-BOLD.TTF::FontFile::145452992532128514::1703970600::1705521692::1::::<><>::
-MENU.tres::FontFile::-1::1705521692::0::1::::<><>::uid://ccpubreiwxm5::::res://Fonts/DUBAI-BOLD.TTF
-::res://Menus/::1705522258
-::res://Menus/Pause/::1707489218
-Pause.tscn::PackedScene::6361309595828636507::1707489218::0::1::::<><>::res://Scripts/Pause.gd<>uid://ccpubreiwxm5::::res://Fonts/DUBAI-BOLD.TTF<>res://Fonts/MENU.tres
-::res://Menus/Principal/::1706873259
-Menu_Principal.tscn::PackedScene::7334125190203473109::1706873259::0::1::::<><>::res://Scripts/Menu_Principal.gd<>res://Fonts/MENU.tres
-::res://Salvamento/::1706795040
-::res://Scripts/::1707489531
-arco.gd::GDScript::-1::1706835503::0::1::::<>Node2D<>::
-Atacar.gd::GDScript::-1::1707422863::0::1::::<>Node2D<>::
-CampoDeVisao.gd::GDScript::-1::1707305156::0::1::::<>Area2D<>::
-espada.gd::GDScript::-1::1707423406::0::1::::<>Node2D<>::
-flecha.gd::GDScript::-1::1706470708::0::1::::Flecha<>Node2D<>::
-Inimigo_do_Orgulho.gd::GDScript::-1::1707265465::0::1::::<>InimigoBase<>::
-Inimigo_Padrao.gd::GDScript::-1::1707264903::0::1::::InimigoBase<>CharacterBody2D<>::
-jogador.gd::GDScript::-1::1707423395::0::1::::Jogador<>CharacterBody2D<>::
-Menu_Principal.gd::GDScript::-1::1706836093::0::1::::<>Control<>::
-Pause.gd::GDScript::-1::1707489531::0::1::::<>CanvasLayer<>::
-::res://Sprites/::1707424076
-::res://Sprites/Armas/::1705521760
-::res://Sprites/Armas/arco e flecha/::1706130707
-Arco Completo.png::CompressedTexture2D::4834805244242630449::1705488867::1705522370::1::::<><>::
-flecha.png::CompressedTexture2D::955159775110874840::1706130705::1706130707::1::::<><>::
-::res://Sprites/Armas/espada/::1707250103
-Jorges_big_sword_for_slowers.png::CompressedTexture2D::6311013391847346497::1706830449::1706830518::1::::<><>::
-Untitled_03-15-2021_11-02-44.png::CompressedTexture2D::4011447843110947635::1706875894::1706875899::1::::<><>::
-::res://Sprites/cenario/::1705834011
-::res://Sprites/GUI/::1707425079
-Sprite-0002.png::CompressedTexture2D::2835560140477679442::1707425077::1707425079::1::::<><>::
-Tutorial_Icones.png::CompressedTexture2D::1729742424825502089::1707424078::1707424083::1::::<><>::
-::res://Sprites/Inimigos/::1707249576
-Igor_Iago_Ivan_Inacio_Irineu_Isma.png::CompressedTexture2D::7167625550498361828::1706893542::1706920121::1::::<><>::
-iuri.png::CompressedTexture2D::3017581950319346571::1706893307::1706920121::1::::<><>::
-spritesheet.png::CompressedTexture2D::4264230878717382335::1703971211::1705522370::1::::<><>::
-::res://Sprites/player/::1705673836
-Jorge.png::CompressedTexture2D::4419870519403137488::1705673833::1705673836::1::::<><>::
-::res://TileSet/::1705539112
-::res://TileSet/masmorra/::1706130378
-dungeon.tres::TileSet::-1::1705522336::0::1::::<><>::uid://dtvp5l1fbg36f::::res://TileSet/masmorra/dungeonTiles2.png
-dungeonTiles2.png::CompressedTexture2D::1173764885371095143::1706130376::1706130378::1::::<><>::
-Teste de autoTile.png::CompressedTexture2D::5186567020516245727::1705833956::1705834011::1::::<><>::
+::res://::1738630912
+Icone do Jogo.png::CompressedTexture2D::5547878843128416953::1738621399::1738621440::1::::<><>::
+Interações.res::AnimationLibrary::6986985084279961948::1738621399::0::1::::<><>::
+MV - Elemento Cenário.png::CompressedTexture2D::7289432231268446141::1738621399::1738621440::1::::<><>::
+::res://Cenas/::1738624642
+tutorial.tscn::PackedScene::4131365596992426555::1738624642::0::1::::<><>::uid://bgnti48ri00u5::::res://Sprites/GUI/Sprite-0002.png
+::res://Cenas/armas/::1738624642
+arco.tscn::PackedScene::6534385672883789808::1738624642::0::1::::<><>::res://Scripts/arco.gd<>uid://ca5ashu5qjipl::::res://Sprites/Armas/arco e flecha/Arco Completo.png
+flecha.tscn::PackedScene::5955607886943848060::1738624642::0::1::::<><>::uid://nuxlvj3cftae::::res://Sprites/Armas/arco e flecha/flecha.png<>res://Scripts/flecha.gd
+::res://Cenas/Inimigos/::1738621526
+Inimigo_Padrão.tscn::PackedScene::1947956449460156346::1738621407::0::1::::<><>::res://Scripts/Inimigo_Padrao.gd
+::res://Cenas/Inimigos/Funcoes/::1738624642
+Atacar.tscn::PackedScene::1030180786969794501::1738624642::0::1::::<><>::res://Scripts/Atacar.gd
+CampoDeVisao.tscn::PackedScene::3887893221109822298::1738621407::0::1::::<><>::res://Scripts/CampoDeVisao.gd
+PerseguirJogador.gd::GDScript::-1::1738621408::0::1::::<>Node<>::
+PerseguirJogador.tscn::PackedScene::7179507608209733004::1738621408::0::1::::<><>::res://Cenas/Inimigos/Funcoes/PerseguirJogador.gd
+SeguirCaminho.gd::GDScript::-1::1738621408::0::1::::<>Node2D<>::
+SeguirCaminho.tscn::PackedScene::3236365532897675190::1738621408::0::1::::<><>::res://Cenas/Inimigos/Funcoes/SeguirCaminho.gd
+::res://Cenas/Inimigos/Orgulho/::1738621527
+Inimigo_do_Orgulho.tscn::PackedScene::5712264655206246244::1738621408::0::1::::<><>::uid://20us8gplogt3::::res://Cenas/Inimigos/Inimigo_Padrão.tscn<>res://Scripts/Inimigo_do_Orgulho.gd<>uid://c6ssvg2dkj7ka::::res://Interações.res<>uid://bi80esy0i1wnj::::res://Sprites/Inimigos/iuri.png<>uid://bmdyp5oe6cvog::::res://Cenas/Inimigos/Funcoes/SeguirCaminho.tscn<>uid://daj2pahr8mrlc::::res://Cenas/Inimigos/Funcoes/PerseguirJogador.tscn<>uid://bvnlber0hpt3o::::res://Cenas/Inimigos/Funcoes/CampoDeVisao.tscn<>uid://oxa6rw1of8o4::::res://Cenas/Inimigos/Funcoes/Atacar.tscn
+::res://Cenas/Jogador/::1738624642
+espada.tscn::PackedScene::5122445942305257792::1738621408::0::1::::<><>::res://Scripts/espada.gd<>uid://cv6dp6uo7x3rx::::res://Sprites/Armas/espada/Jorges_big_sword_for_slowers.png<>uid://bxff7vv02unj4::::res://Sprites/Armas/espada/Untitled_03-15-2021_11-02-44.png
+Jogador.tscn::PackedScene::6692547563831181809::1738624642::0::1::::<><>::res://Scripts/jogador.gd<>uid://b38avexov22uu::::res://Sprites/player/Jorge.png<>uid://ce8l63lgydnoy::::res://Cenas/Jogador/espada.tscn<>uid://c0dkm3hh8ms2c::::res://Cenas/armas/arco.tscn<>uid://cwvp3svm7lo1x::::res://Menus/Pause/Pause.tscn
+::res://Fases/::1738624642
+Fase1.tscn::PackedScene::2700182330714069367::1738624642::0::1::::<><>::uid://qyt0baskklh4::::res://TileSet/masmorra/dungeonTiles2.png<>uid://c2l6jsma8moy0::::res://Cenas/Jogador/Jogador.tscn<>uid://cnncft6ut28xk::::res://Cenas/Inimigos/Orgulho/Inimigo_do_Orgulho.tscn<>uid://by4i8t42gbxkd::::res://Cenas/tutorial.tscn
+::res://Fonts/::1738621526
+DUBAI-BOLD.TTF::FontFile::145452992532128514::1738621408::1738621440::1::::<><>::
+MENU.tres::FontFile::-1::1738621408::0::1::::<><>::uid://ccpubreiwxm5::::res://Fonts/DUBAI-BOLD.TTF
+::res://Menus/::1738621526
+::res://Menus/Pause/::1738624642
+Pause.tscn::PackedScene::6361309595828636507::1738624642::0::1::::<><>::res://Scripts/Pause.gd<>uid://ccpubreiwxm5::::res://Fonts/DUBAI-BOLD.TTF<>res://Fonts/MENU.tres
+::res://Menus/Principal/::1738621526
+Menu_Principal.tscn::PackedScene::7334125190203473109::1738621408::0::1::::<><>::res://Scripts/Menu_Principal.gd<>res://Fonts/MENU.tres
+::res://Salvamento/::1738621526
+::res://Scripts/::1738624025
+arco.gd::GDScript::-1::1738621408::0::1::::<>Node2D<>::
+Atacar.gd::GDScript::-1::1738621408::0::1::::<>Node2D<>::
+CampoDeVisao.gd::GDScript::-1::1738621408::0::1::::<>Area2D<>::
+espada.gd::GDScript::-1::1738621408::0::1::::<>Node2D<>::
+flecha.gd::GDScript::-1::1738621408::0::1::::Flecha<>Node2D<>::
+Inimigo_do_Orgulho.gd::GDScript::-1::1738621408::0::1::::<>InimigoBase<>::
+Inimigo_Padrao.gd::GDScript::-1::1738621408::0::1::::InimigoBase<>CharacterBody2D<>::
+jogador.gd::GDScript::-1::1738621408::0::1::::Jogador<>CharacterBody2D<>::
+Menu_Principal.gd::GDScript::-1::1738621408::0::1::::<>Control<>::
+Pause.gd::GDScript::-1::1738624025::0::1::::<>CanvasLayer<>::
+::res://Sprites/::1738621526
+::res://Sprites/Armas/::1738621527
+::res://Sprites/Armas/arco e flecha/::1738621527
+Arco Completo.png::CompressedTexture2D::4834805244242630449::1738621408::1738621440::1::::<><>::
+flecha.png::CompressedTexture2D::955159775110874840::1738621408::1738621440::1::::<><>::
+::res://Sprites/Armas/espada/::1738621527
+Jorges_big_sword_for_slowers.png::CompressedTexture2D::6311013391847346497::1738621408::1738621440::1::::<><>::
+Untitled_03-15-2021_11-02-44.png::CompressedTexture2D::4011447843110947635::1738621408::1738621440::1::::<><>::
+::res://Sprites/GUI/::1738621526
+Sprite-0002.png::CompressedTexture2D::2835560140477679442::1738621408::1738621440::1::::<><>::
+Tutorial_Icones.png::CompressedTexture2D::1729742424825502089::1738621408::1738621440::1::::<><>::
+::res://Sprites/Inimigos/::1738621526
+Igor_Iago_Ivan_Inacio_Irineu_Isma.png::CompressedTexture2D::7167625550498361828::1738621408::1738621440::1::::<><>::
+iuri.png::CompressedTexture2D::3017581950319346571::1738621409::1738621440::1::::<><>::
+spritesheet.png::CompressedTexture2D::4264230878717382335::1738621409::1738621440::1::::<><>::
+::res://Sprites/player/::1738621526
+Jorge.png::CompressedTexture2D::4419870519403137488::1738621409::1738621440::1::::<><>::
+::res://TileSet/::1738621526
+::res://TileSet/masmorra/::1738621526
+dungeon.tres::TileSet::-1::1738621409::0::1::::<><>::uid://dtvp5l1fbg36f::::res://TileSet/masmorra/dungeonTiles2.png
+dungeonTiles2.png::CompressedTexture2D::1173764885371095143::1738621409::1738621440::1::::<><>::
+Teste de autoTile.png::CompressedTexture2D::5186567020516245727::1738621409::1738621440::1::::<><>::

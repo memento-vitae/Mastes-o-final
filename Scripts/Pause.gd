@@ -25,4 +25,3 @@ func _on_btn_sair_pressed():
 
 func _on_btn_voltar_pressed():
 	fechar_menu()
-
