@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://dungeon.tres" type="TileSet" id=1]
 [ext_resource path="res://teste/player1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://coletaveis/bau/bau.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/cenario/elementos extras/esqueleto.tscn" type="PackedScene" id=4]
 [ext_resource path="res://itens de lore/pedraTalhada1.tscn" type="PackedScene" id=5]
 
 [node name="fase1" type="Node2D"]
@@ -37,6 +38,24 @@ position = Vector2( 288, 280 )
 [node name="inimigos" type="Node2D" parent="."]
 
 [node name="esqueletos" type="Node2D" parent="."]
+
+[node name="esqueleto" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 32, 112 )
+
+[node name="esqueleto2" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 640, 208 )
+
+[node name="esqueleto3" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 312, 256 )
+
+[node name="esqueleto4" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 432, -312 )
+
+[node name="esqueleto5" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 296, 120 )
+
+[node name="esqueleto6" parent="esqueletos" instance=ExtResource( 4 )]
+position = Vector2( 168, -56 )
 
 [node name="itens de lore" type="Node2D" parent="."]
 

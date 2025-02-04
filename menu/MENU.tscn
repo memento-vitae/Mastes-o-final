@@ -11,7 +11,8 @@ anchor_bottom = 1.007
 margin_bottom = 0.219971
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 153.0 ]
+"_edit_horizontal_guides_": [ 153.0 ],
+"_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
@@ -66,6 +67,5 @@ text = "\"opções\""
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="and" to="." method="_on_and_pressed"]
